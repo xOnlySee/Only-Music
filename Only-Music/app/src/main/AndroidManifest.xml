@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ProyectoFinal"
+        tools:targetApi="31">
+        <activity
+            android:name=".actividades.VisualizarUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".actividades.ActualizarPost"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actividades.VisualizarPost"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actividades.Presentacion"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actividades.RestaurarContrasenya"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actividades.Reproduccion"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/fondo" />
+        <activity
+            android:name=".actividades.VisualizarArtista"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actividades.AnyadirPost"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actividades.EditarInformacion"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actividades.PantallaPrincipal"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actividades.CrearCuenta"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actividades.InicioSesion"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actividades.PantallaBienvenida"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".fragmentos.FragmentoCanciones"
+            tools:ignore="Instantiatable" />
+    </application>
+
+</manifest>

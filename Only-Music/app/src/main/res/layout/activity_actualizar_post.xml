@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_actualizarPost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".actividades.ActualizarPost" >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/imagen_actualizarPost"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="77359-refresh-update-reload-restart-sync-load.json"
+            app:lottie_loop="false" />
+
+        <TextView
+            android:id="@+id/textoPost_eliminarPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="¿Deseas actualizar el post?"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagen_actualizarPost" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutTitulo_actualizarPost"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textoPost_eliminarPost" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoTitulo_actualizarPost"
+                android:layout_width="match_parent"
+                android:hint="Titulo del post"
+                android:maxLength="40"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutMensaje_actualizarPost"
+            android:layout_width="330dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutTitulo_actualizarPost" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoMensaje_actualizarPost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:hint="Mensaje"
+                android:maxLength="300"
+                android:gravity="start|top" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutCategoria_actualizarPost"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutMensaje_actualizarPost" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoCategoria_actualizarPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Categoria del post (actual)"
+                android:enabled="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonEliminar_actualizarPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Actualizar"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.475"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutCategoria_actualizarPost" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

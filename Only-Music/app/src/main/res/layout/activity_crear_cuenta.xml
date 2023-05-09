@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_pantallaCrearCuenta"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".actividades.CrearCuenta" >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/imagen_pantallaCrearCuenta"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="66351-edit.json"
+            app:lottie_loop="true" />
+
+        <TextView
+            android:id="@+id/textoCrearCuenta_pantallaCrearCuenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear cuenta"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.089"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagen_pantallaCrearCuenta" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutEmail_pantallaCrearCuenta"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textoCrearCuenta_pantallaCrearCuenta">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoEmail_pantallaCrearCuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="Introduce tu email" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutContrasenya_pantallaCrearCuenta"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutEmail_pantallaCrearCuenta" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoContrasenya_pantallaCrearCuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Introduce la contraseña" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutConfirmacionContrasenya_pantallaCrearCuenta"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutContrasenya_pantallaCrearCuenta" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoConfirmacionContrasenya_pantallaCrearCuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Confirma la contraseña" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checBoxTerminos_pantallaCrearCuenta"
+            android:layout_width="352dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="20dp"
+            android:text="Estoy de acuerdo con los Términos del servicios y con la Política de privacidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutConfirmacionContrasenya_pantallaCrearCuenta" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonContinuar_pantallaCrearCuenta"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="Continuar"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checBoxTerminos_pantallaCrearCuenta" />
+
+        <TextView
+            android:id="@+id/textoYaCuenta_pantallaCrearCuenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="¿Ya tienes cuenta?"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/botonContinuar_pantallaCrearCuenta" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonIniciarSesion_pantallaCrearCuenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Inciar sesión"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.775"
+            app:layout_constraintStart_toEndOf="@+id/textoYaCuenta_pantallaCrearCuenta"
+            app:layout_constraintTop_toBottomOf="@+id/botonContinuar_pantallaCrearCuenta" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".actividades.VisualizarArtista" >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imagenArtista_visualizarArtista"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="TODO"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/imageView" />
+
+        <TextView
+            android:id="@+id/nombreApellidosArtista_visualizarArtista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Nombre artista y apellidos"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagenArtista_visualizarArtista" />
+
+        <TextView
+            android:id="@+id/informacionBasicaArtista_visualizarArtista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Número de albums - Fecha de nacimiento - Nacionalidad - Genero"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nombreApellidosArtista_visualizarArtista" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider1_visualizarArtista"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/informacionBasicaArtista_visualizarArtista"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/textoBienvenida_visualizarArtista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Biografia"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.087"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider1_visualizarArtista" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutBiografia_visualizarArtista"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textoBienvenida_visualizarArtista" >
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:isScrollContainer="true"
+                android:autofillHints="Biografia" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoBiografia_visualizarArtista"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:inputType="textMultiLine"
+                    android:text="Visualizar biografia del artista" />
+            </androidx.core.widget.NestedScrollView>
+        </com.google.android.material.textfield.TextInputLayout>
+        
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider2_visualizarArtista"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@+id/layoutBiografia_visualizarArtista" />
+
+        <TextView
+            android:id="@+id/textoImagenArtista_visualizarArtista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Imágenes del artista"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.087"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider2_visualizarArtista" />
+
+        <ViewFlipper
+            android:id="@+id/viewFlipper_artista"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:autoStart="true"
+            app:layout_constraintTop_toBottomOf="@+id/textoImagenArtista_visualizarArtista" >
+        </ViewFlipper>
+        
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider3_visualizarArtista"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/viewFlipper_artista"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/textoImagenAlbum_visualizarArtista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Imágenes de los albums"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.087"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider3_visualizarArtista" />
+
+        <ViewFlipper
+            android:id="@+id/viewFlipper_album"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:autoStart="true"
+            app:layout_constraintTop_toBottomOf="@+id/textoImagenAlbum_visualizarArtista" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider4_visualizarArtista"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/viewFlipper_album"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/textoVisualizaciónPresentacion_visualizarArtista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Presentación en directo"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.087"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider4_visualizarArtista" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonVisualizacionPresentacion_visualizarArtista"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="25dp"
+            android:text="Visualizar presentación"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textoVisualizaciónPresentacion_visualizarArtista" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

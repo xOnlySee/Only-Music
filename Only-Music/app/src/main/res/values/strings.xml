@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Only Music</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="problema_email">Introduce un email válido</string>
+    <string name="problema_contrasenya">Introduce una contraseña valida (más de 8 caracteres y algún caracter especial)</string>
+</resources>

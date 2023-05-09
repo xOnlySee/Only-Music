@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "743156869970",
+    "project_id": "only-music-b1515",
+    "storage_bucket": "only-music-b1515.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743156869970:android:affc5ca61912174f59a88b",
+        "android_client_info": {
+          "package_name": "com.example.proyectofinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743156869970-n097h45ie0fegldc6nh9kvpjndfbc0ll.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRg02yKZYtbxTrdUpoBE5ZXaDFG9okFw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743156869970-n097h45ie0fegldc6nh9kvpjndfbc0ll.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

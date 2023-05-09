@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_pantallaAnyadirPost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        tools:context=".actividades.AnyadirPost" >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/imagen_pantallaAnyadirPost"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="61885-post.json"
+            app:lottie_loop="true" />
+
+        <TextView
+            android:id="@+id/textoNuevoPost_pantallaAnyadirPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Añadir post"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagen_pantallaAnyadirPost" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutTitulo_pantallaAnyadirPost"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textoNuevoPost_pantallaAnyadirPost" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoTitulo_pantallaAnyadirPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLength="40"
+                android:hint="Introduce el titulo del post" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutMensaje_pantallaAnyadirPost"
+            android:layout_width="330dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="20dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutTitulo_pantallaAnyadirPost" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoMensaje_pantallaAnyadirPost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Introduce el mensaje del post"
+                android:maxLength="300"
+                android:gravity="start|top"
+                android:inputType="textMultiLine" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonConfirmar_pantallaAnyadirPost"
+            android:layout_width="340dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            android:text="Confirmar"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutMensaje_pantallaAnyadirPost" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

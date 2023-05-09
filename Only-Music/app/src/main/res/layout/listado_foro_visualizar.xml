@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:animateLayoutChanges="true"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="6dp" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="4dp">
+
+                <TextView
+                    android:id="@+id/categoria_elementoForoVisualizar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="Categoria"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/fechaPublicacion_elementoForoVisualizar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="15dp"
+                    android:text="Fecha publicacion" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tituloMensaje_elementoForoVisualizar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Titulo mensaje"
+            android:paddingLeft="14dp"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/mensaje_elementoForoVisualizar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mensaje"
+            android:paddingLeft="14dp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

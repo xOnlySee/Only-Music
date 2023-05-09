@@ -1,0 +1,22 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.ProyectoFinal" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#89B4F8</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">#89B4F8</item>
+        <!-- Customize your theme here. -->
+
+        <item name="android:windowBackground">#121315</item>
+    </style>
+
+    <style name="fondo" parent="Theme.Material3.Dark.NoActionBar" >
+        <item name="android:windowBackground">#424242</item>
+    </style>
+</resources>

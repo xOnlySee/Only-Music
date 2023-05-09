@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fragmento_inicio"
+        android:icon="@drawable/home"
+        android:title="Inicio" />
+
+    <item
+        android:id="@+id/fragmento_canciones"
+        android:icon="@drawable/music"
+        android:title="Música" />
+
+    <item
+        android:id="@+id/fragmento_artistas"
+        android:icon="@drawable/artist"
+        android:title="Artistas" />
+
+    <item
+        android:id="@+id/fragmento_foro"
+        android:icon="@drawable/message"
+        android:title="Foro" />
+</menu>
