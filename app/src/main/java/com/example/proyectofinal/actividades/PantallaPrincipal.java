@@ -87,6 +87,8 @@ public class PantallaPrincipal extends AppCompatActivity {
 
         //Le añadimos el Bundle al fragmento inidicado usando el método setArguments() donde le pasamos el Bundle
         fragmento_inicio.setArguments(bundle);
+        fragmento_canciones.setArguments(bundle);
+        fragmento_artistas.setArguments(bundle);
         fragmento_foro.setArguments(bundle);
 
         //Iniciamos la transacción y hacemos un commit

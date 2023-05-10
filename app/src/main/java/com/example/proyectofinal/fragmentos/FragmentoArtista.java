@@ -9,10 +9,12 @@ import androidx.fragment.app.FragmentResultListener;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.example.proyectofinal.R;
 import com.example.proyectofinal.actividades.VisualizarArtista;
@@ -43,17 +45,18 @@ public class FragmentoArtista extends Fragment implements SearchView.OnQueryText
     SearchView barra_busqueda;
     private String email, id_documento;
 
+    /**
+     * Método para obtener en sus respectivas variables la información que le llega
+     * @param savedInstanceState If the fragment is being re-created from
+     * a previous saved state, this is the state.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Usamos el método getParentFragmentManager().setFragmentResultListener() para recuperar el email del usuario que ha iniciado sesión y el ID del documento
-        getParentFragmentManager().setFragmentResultListener("key", this, new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                email = result.getString("email");
-                id_documento = result.getString("ID_documento");
-            }
-        });
+        if (getArguments() != null) {
+            email = getArguments().getString("email");
+            id_documento = getArguments().getString("ID_documento");
+        }
     }
 
     @Override

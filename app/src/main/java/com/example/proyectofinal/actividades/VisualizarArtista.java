@@ -51,6 +51,7 @@ public class VisualizarArtista extends AppCompatActivity {
      */
     @Override
     public void onBackPressed() {
+        Log.i("ID", id_documento);
         //Creamos un Intent que vaya a la actividad donde contiene los fragmentos y enviamos el email y el ID del documento
         Intent intent = new Intent(VisualizarArtista.this, PantallaPrincipal.class);
             intent.putExtra("email", email);
@@ -64,8 +65,15 @@ public class VisualizarArtista extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visualizar_artista);
 
+        //Declaramos e instanciamos un objeto de la clase Bundle para obtener el email del usuario quer ha iniciado sesión
+        Bundle bundle = getIntent().getExtras();
+        email = (String) bundle.get("email");
+        id_documento = (String) bundle.get("ID_documento");
+
         //Método donde indicaremos la animación de entrada y la animación de salida
         overridePendingTransition(R.anim.slide_in_left, R.anim.fade_out);
+
+        Log.i("ID", id_documento);
 
         //Identificamos el ImageView
         imagen = findViewById(R.id.imagenArtista_visualizarArtista);
@@ -87,11 +95,6 @@ public class VisualizarArtista extends AppCompatActivity {
 
         //Instanciamos el CollectionReference donde le pasamos la colección "artista"
         collectionReference = firestore.collection("artista");
-
-        //Declaramos e instanciamos un objeto de la clase Bundle para obtener el email del usuario quer ha iniciado sesión
-        Bundle bundle = getIntent().getExtras();
-        email = (String) bundle.get("email");
-        id_documento = (String) bundle.get("ID_documento");
 
         //Creamos un ArrayList de tipo String donde contendrá las URL de las imagenes del artista y otro ArrayList donde contendrá la URL de la imagenes de los albums
         ArrayList<String> url_imagenes_artista = new ArrayList<>(), url_imagenes_album = new ArrayList<>();
