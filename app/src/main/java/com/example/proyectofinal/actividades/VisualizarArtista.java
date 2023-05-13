@@ -5,14 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.MediaController;
 import android.widget.TextView;
-import android.widget.VideoView;
 import android.widget.ViewFlipper;
 
 import com.bumptech.glide.Glide;
@@ -51,7 +48,6 @@ public class VisualizarArtista extends AppCompatActivity {
      */
     @Override
     public void onBackPressed() {
-        Log.i("ID", id_documento);
         //Creamos un Intent que vaya a la actividad donde contiene los fragmentos y enviamos el email y el ID del documento
         Intent intent = new Intent(VisualizarArtista.this, PantallaPrincipal.class);
             intent.putExtra("email", email);
@@ -72,8 +68,6 @@ public class VisualizarArtista extends AppCompatActivity {
 
         //Método donde indicaremos la animación de entrada y la animación de salida
         overridePendingTransition(R.anim.slide_in_left, R.anim.fade_out);
-
-        Log.i("ID", id_documento);
 
         //Identificamos el ImageView
         imagen = findViewById(R.id.imagenArtista_visualizarArtista);
@@ -155,6 +149,7 @@ public class VisualizarArtista extends AppCompatActivity {
                             intent.putExtra("letra_cancion", letra_cancion);
                             intent.putExtra("Artista", artista);
                             intent.putExtra("ID_documento", id_documento);
+                            intent.putExtra("email", email);
                         startActivity(intent);
                     }
                 });
@@ -179,14 +174,14 @@ public class VisualizarArtista extends AppCompatActivity {
         //Usamos la implementación Glide donde le indicamos el texto, la URL de la imagen y donde la tiene que mostrar
         Glide.with(VisualizarArtista.this).load(imagen).into(imageView);
 
-        if (artista == true) {
+        if (artista) {
             //Usamos el objeto de la clase ViewFlipper donde indicamos que elemento es el que tiene que mostrar
             viewFlipper_artista.addView(imageView);
 
             //Usamos el objeto de la clase ViewFlipper donde indicamos la duración entre las distintas imagenes del carrusel
             viewFlipper_artista.setFlipInterval(2000);
 
-        } else if (artista == false) {
+        } else if (!artista) {
             //Usamos el objeto de la clase ViewFlipper donde indicamos que elemento es el que tiene que mostrar
             viewFlipper_album.addView(imageView);
 

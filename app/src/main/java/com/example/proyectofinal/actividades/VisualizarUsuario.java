@@ -139,7 +139,7 @@ public class VisualizarUsuario extends AppCompatActivity {
                 query_post.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     /**
                      * Declaramos la funcionabilidad en caso de que se haya llevado de forma correcta
-                     * @param task
+                     * @param task Objeto de la clase Task
                      */
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {

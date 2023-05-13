@@ -7,7 +7,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
@@ -51,7 +50,10 @@ public class EditarInformacion extends AppCompatActivity {
     CollectionReference collectionReference;
     DocumentReference documentReference;
     StorageReference storageReference;
-    String email, id_documento, ruta = "imagenes_perfil/", imagen_perfil;
+    String email;
+    String id_documento;
+    final String ruta = "imagenes_perfil/";
+    String imagen_perfil;
     private static final int COD_SEL_IMAGE = 300;
 
     /**
@@ -156,6 +158,58 @@ public class EditarInformacion extends AppCompatActivity {
                 }
             });
         snackbar_informacion.show();
+
+        //Añadimos la funcionabilidad al campo del nombre y apellidos
+        campo_nombre_apellidos.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Hacemos que cuando el usuario pulse sobre el campo del nombre y apellidos, que el TextInputLayout añada el icono de limpiar el texto y eliminamos el error
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                layout_nombre_apellidos.setEndIconMode(TextInputLayout.END_ICON_CLEAR_TEXT);
+                layout_nombre_apellidos.setError(null);
+            }
+        });
+
+        //Añadimos la funcionabilidad al campo del nombre de usuario
+        campo_nombre_usuario.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Hacemos que cuando el usuario pulse sobre el campo del nombre de usuario, que el TextInputLayout añada el icono de limpiar el texto y eliminamos el error
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                layout_nombre_usuario.setEndIconMode(TextInputLayout.END_ICON_CLEAR_TEXT);
+                layout_nombre_usuario.setError(null);
+            }
+        });
+
+        //Añadimos la funcionabilidad al campo de la edad
+        campo_edad.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Hacemos que cuando el usuario pulse sobre el campo de la edad, que el TextInputLayout añada el icono de limpiar el texto y eliminamos el error
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                layout_edad.setEndIconMode(TextInputLayout.END_ICON_CLEAR_TEXT);
+                layout_edad.setError(null);
+            }
+        });
+
+        //Añadimos la funcionabilidad al campo de la biografia
+        campo_biografia.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Hacemos que cuando el usuario pulse sobre el campo de la biografia, que el TextInputLayout añada el icono de limpiar el texto y eliminamos el error
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                layout_biografia.setEndIconMode(TextInputLayout.END_ICON_CLEAR_TEXT);
+                layout_biografia.setError(null);
+            }
+        });
 
         //Instanciamos el objeto DocumentReferences donde indicamos el nombre de la colección el ID del documento
         documentReference = firestore.collection("perfil").document(id_documento);
@@ -280,7 +334,7 @@ public class EditarInformacion extends AppCompatActivity {
         storageReference_imagen.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             /**
              * Método realizaremos las acciones donde actualizará la imagen de perfil
-             * @param taskSnapshot
+             * @param taskSnapshot Objeto de la clase TaskSnapShot
              */
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {

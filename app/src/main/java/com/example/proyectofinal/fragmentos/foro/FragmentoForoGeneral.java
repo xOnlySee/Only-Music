@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.proyectofinal.R;
 import com.example.proyectofinal.actividades.VisualizarUsuario;
@@ -45,8 +44,7 @@ public class FragmentoForoGeneral extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        // Inflate the layout for this fragment
+        //Instanciamos el objeto de la clase View
         view = inflater.inflate(R.layout.fragment_fragmento_foro_general, container, false);
 
         //Creamos un Bundle donde almacenaremos en sus respectivas variables, el ID del documento y el email

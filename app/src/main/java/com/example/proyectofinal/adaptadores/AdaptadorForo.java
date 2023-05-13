@@ -91,8 +91,11 @@ public class AdaptadorForo extends RecyclerView.Adapter<AdaptadorForo.ViewHolder
 
     //Clase estática correspondiente al Adaptador
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView imagen;
-        TextView nombre_usuario, fecha_publicacion, titulo_mensaje, mensaje;
+        final ImageView imagen;
+        final TextView nombre_usuario;
+        final TextView fecha_publicacion;
+        final TextView titulo_mensaje;
+        final TextView mensaje;
 
         /**
          * Constructor de la clase ViewHolder utilizada para identificar a los elementos

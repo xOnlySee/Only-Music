@@ -54,12 +54,13 @@ public class ViewPageAdapter extends FragmentPagerAdapter {
     /**
      * Método donde obtendremos y establecerá el nombre de los Item del TabLayout
      * @param position The position of the title requested
-     * @return
+     * @return Devuelve el nombre de TabItem del TabLayout
      */
     @Override
     public CharSequence getPageTitle(int position) {
         return listado_nombre_items.get(position);
     }
+
     /**
      * Método donde añadiremos el fragmento, el nombre del Item en los respectivos ArrayList, el ID del documento y el email de quien ha iniciado sesión
      * @param fragment Objeto de la clase Fragment

@@ -4,17 +4,10 @@
     android:layout_height="wrap_content"
     android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/imagenElementoLista"
-        android:layout_width="100dp"
-        android:layout_height="80dp"
-        android:src="@drawable/ic_launcher_background" />
-
     <TextView
         android:id="@+id/tituloCancion_fragmentoCanciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/imagenElementoLista"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:text="Titulo canción"
@@ -25,19 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tituloCancion_fragmentoCanciones"
-        android:layout_toRightOf="@+id/imagenElementoLista"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:text="Nombre artista ● Nombre Album ● Duración de canción"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_marginTop="16dp"
-        android:layout_below="@id/informacionCancion_fragmentoCanciones"
-        android:layout_toRightOf="@+id/imagenElementoLista"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"/>
 
 </RelativeLayout>

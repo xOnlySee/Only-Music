@@ -6,10 +6,8 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ScrollView;
-import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.proyectofinal.R;
@@ -111,6 +109,32 @@ public class ActualizarPost extends AppCompatActivity {
                 }
             });
         snackbar.show();
+
+        //Añadimos la funcionabilidad al campo del titulo
+        campo_titulo.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Hacemos que cuando el usuario pulse sobre el campo del titulo, que el TextInputLayout añada el icono de limpiar el texto y eliminamos el error
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                layout_titulo.setEndIconMode(TextInputLayout.END_ICON_CLEAR_TEXT);
+                layout_titulo.setError(null);
+            }
+        });
+
+        //Añadimos la funcionabilidad al campo del mensaje
+        campo_mensaje.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Hacemos que cuando el usuario pulse sobre el campo del mensaje, que el TextInputLayout añada el icono de limpiar el texto y eliminamos el error
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                layout_mensaje.setEndIconMode(TextInputLayout.END_ICON_CLEAR_TEXT);
+                layout_mensaje.setError(null);
+            }
+        });
 
         //Declaramos la funcionabilidad del botón de eliminar post
         boton_eliminar_post.setOnClickListener(new View.OnClickListener() {

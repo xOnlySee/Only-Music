@@ -1,34 +1,25 @@
 package com.example.proyectofinal.fragmentos;
 
-import android.annotation.SuppressLint;
 import android.content.ContentResolver;
-import android.content.ContentUris;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.transition.Transition;
 import com.example.proyectofinal.R;
 import com.example.proyectofinal.actividades.Reproduccion;
 import com.example.proyectofinal.adaptadores.AdaptadorCancion;
@@ -36,7 +27,6 @@ import com.example.proyectofinal.clases.Cancion;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 
 /**
  * @author Jesús Escudero Gabarre
@@ -187,11 +177,9 @@ public class FragmentoCanciones extends Fragment {
                         duracion = cursor.getString(columna_duracion),
                         nombre_album = cursor.getString(columna_album);
 
-                Uri uri_imagen = ContentUris.withAppendedId(Uri.parse("content://media/external/audio/albumart"), columna_album);
-
                 //Comprobaamos que el nombre de la canción no tenga la cadena "AUD" (para envitar añadir audios de WhatsApp)
                 if (!titulo.contains("AUD")) {
-                    Cancion cancion = new Cancion(uri_imagen, id, titulo, artista, data, duracion, nombre_album);
+                    Cancion cancion = new Cancion(id, titulo, artista, data, duracion, nombre_album);
                     canciones.add(cancion);
                 }
             } while (cursor.moveToNext());

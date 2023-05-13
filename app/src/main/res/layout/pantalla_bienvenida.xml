@@ -8,11 +8,34 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/imagen_pantallaBienvenida"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:lottie_fileName="990-inattentive.json"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_fileName="routine.json"
         app:lottie_loop="true"
         app:lottie_autoPlay="true"
         tools:ignore="MissingConstraints" />
 
+    <ImageView
+        android:id="@+id/imagenLogo_pantallaBienvenida"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="236dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imagen_pantallaBienvenida"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Only Music"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenLogo_pantallaBienvenida"
+        app:layout_constraintVertical_bias="0.813" />
 </androidx.constraintlayout.widget.ConstraintLayout>

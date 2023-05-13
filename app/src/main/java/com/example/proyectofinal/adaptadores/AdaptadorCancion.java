@@ -1,23 +1,17 @@
 package com.example.proyectofinal.adaptadores;
 
 import android.content.Context;
-import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.proyectofinal.R;
 import com.example.proyectofinal.clases.Cancion;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author Jesús Escudero Gabarre
@@ -91,16 +85,8 @@ public class AdaptadorCancion extends BaseAdapter {
         TextView titulo_cancion = layout.findViewById(R.id.tituloCancion_fragmentoCanciones),
         informacion_cancion = layout.findViewById(R.id.informacionCancion_fragmentoCanciones);
 
-        ImageView imagen = layout.findViewById(R.id.imagenElementoLista);
-
         //Objeto de tipo canción que almacenará la canción que pulse el usuario en la lista de canciones
         Cancion cancion = listado_canciones.get(i);
-
-        Log.i("Imagen", "Hay imagen --> " + String.valueOf(cancion.getImagen()));
-
-        //Glide.with(layout).load("https://www.softzone.es/app/uploads-softzone.es/2020/03/Distro-Parrot-OS.jpg").into(imagen);
-
-        imagen.setImageURI(cancion.getImagen());
 
         //Con el objeto Canción obtenido de la lista, añadiremos la información en los TextView
         titulo_cancion.setText(cancion.getTitulo());

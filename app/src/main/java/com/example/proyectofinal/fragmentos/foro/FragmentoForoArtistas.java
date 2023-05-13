@@ -9,11 +9,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.proyectofinal.R;
 import com.example.proyectofinal.actividades.VisualizarUsuario;
@@ -46,7 +44,7 @@ public class FragmentoForoArtistas extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        //Instanciamos el objeto de la clase View
         View view = inflater.inflate(R.layout.fragment_fragmento_foro_artistas, container, false);
 
         //Creamos un Bundle donde almacenaremos en sus respectivas variables, el ID del documento y el email
@@ -71,6 +69,10 @@ public class FragmentoForoArtistas extends Fragment {
 
         //Usamos el objeto Query donde usamos el método .get() para obtener los datos del documento
         query_post.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            /**
+             * Métododo donde realizaremos las acciones pertinentes en caso de que el proceso se haya completado de forma exitosa
+             * @param task Objeto de la clase Task
+             */
             @SuppressLint("MissingInflatedId")
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {

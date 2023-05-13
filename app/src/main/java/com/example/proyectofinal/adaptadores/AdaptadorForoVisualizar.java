@@ -89,7 +89,10 @@ public class AdaptadorForoVisualizar extends RecyclerView.Adapter<AdaptadorForoV
      * Clase donde especificaremos los elementos del RecyclerView
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView categoria, fecha_publicacion, titulo_mensaje, mensaje;
+        final TextView categoria;
+        final TextView fecha_publicacion;
+        final TextView titulo_mensaje;
+        final TextView mensaje;
 
         /**
          * Constructor de la clase ViewHolder utilizada para identificar a los elementos

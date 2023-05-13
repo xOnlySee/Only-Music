@@ -6,26 +6,18 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.signature.ObjectKey;
 import com.example.proyectofinal.R;
 import com.example.proyectofinal.actividades.EditarInformacion;
-import com.example.proyectofinal.actividades.InicioSesion;
-import com.example.proyectofinal.actividades.PantallaPrincipal;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentReference;
@@ -33,7 +25,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageMetadata;
-import com.google.firebase.storage.StorageReference;
 
 /**
  * @author Jesús Escudero Gabarre
@@ -109,7 +100,7 @@ public class FragmentoInicio extends Fragment {
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             /**
              * Realizaremos las acciones necesarias en caso de que el proceso se haya completado de forma exitosa
-             * @param documentSnapshot
+             * @param documentSnapshot Objeto de la clase DocumentSnapshot
              */
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {

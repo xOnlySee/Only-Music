@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">#1A73E9</item>
         <!-- Customize your theme here. -->
+
     </style>
 
     <style name="imageView">
@@ -22,4 +23,9 @@
     <style name="fondo" parent="Theme.Material3.Dark.NoActionBar" >
         <item name="android:windowBackground">#424242</item>
     </style>
+
+    <style name="TextInputEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 </resources>

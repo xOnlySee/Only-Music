@@ -99,8 +99,8 @@ public class CrearCuenta extends AppCompatActivity {
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
 
         //Añadimos la validación a los campos del email y de la contraseña
-        awesomeValidation.addValidation(this, R.id.campoEmail_pantallaCrearCuenta, Patterns.EMAIL_ADDRESS, R.string.problema_email);
-        awesomeValidation.addValidation(this, R.id.campoContrasenya_pantallaCrearCuenta, "(?=.*[a-z])(?=.*[A-Z])(?=.*[\\d])(?=.*[~`!@#\\$%\\^&\\*\\(\\)\\-_\\+=\\{\\}\\[\\]\\|\\;:\"<>,./\\?]).{8,}", R.string.problema_contrasenya);
+        awesomeValidation.addValidation(this, R.id.layoutEmail_pantallaCrearCuenta, Patterns.EMAIL_ADDRESS, R.string.problema_email);
+        awesomeValidation.addValidation(this, R.id.layoutContrasenya_pantallaCrearCuenta, "(?=.*[a-z])(?=.*[A-Z])(?=.*[\\d])(?=.*[~`!@#\\$%\\^&\\*\\(\\)\\-_\\+=\\{\\}\\[\\]\\|\\;:\"<>,./\\?]).{8,}", R.string.problema_contrasenya);
 
         //Declaramos la funcionabilidad del campo email
         campo_email.setOnClickListener(new View.OnClickListener() {
@@ -116,7 +116,7 @@ public class CrearCuenta extends AppCompatActivity {
         });
 
         //Declaramos la funcionabilidad del campo de la contraseña
-        layout_campo_contrasenya.setOnClickListener(new View.OnClickListener() {
+        campo_contrasenya.setOnClickListener(new View.OnClickListener() {
             /**
              * En caso de que el TextInputLayout sea pulsado, añadiremos el endIconMode correspondiente
              * @param v The view that was clicked.
@@ -125,11 +125,12 @@ public class CrearCuenta extends AppCompatActivity {
             public void onClick(View v) {
                 //Usamos el TextInputLayout seguido del método .setEndIcondeMode para establecer el icono
                 layout_campo_contrasenya.setEndIconMode(TextInputLayout.END_ICON_PASSWORD_TOGGLE);
+                layout_campo_contrasenya.setError(null);
             }
         });
 
         //Declaramos la funcionabilidad del campo de confirmación de la contraseña
-        layout_campo_confirmacion_contrasenya.setOnClickListener(new View.OnClickListener() {
+        campo_confirmacion_contrasenya.setOnClickListener(new View.OnClickListener() {
             /**
              * En caso de que el TextInputLayout sea pulsado, añadiremos el endIconMode correspondiente
              * @param v The view that was clicked.
@@ -138,6 +139,7 @@ public class CrearCuenta extends AppCompatActivity {
             public void onClick(View v) {
                 //Usamos el TextInputLayout seguido del método .setEndIcondeMode para establecer el icono
                 layout_campo_confirmacion_contrasenya.setEndIconMode(TextInputLayout.END_ICON_PASSWORD_TOGGLE);
+                layout_campo_confirmacion_contrasenya.setError(null);
             }
         });
 
@@ -177,7 +179,7 @@ public class CrearCuenta extends AppCompatActivity {
                 //En caso de que el CheckBox de los términos no este marcado
                 } else if (!checkBox_terminos.isChecked()) {
                     //Creamos una Snackbar para mostrar lo sucedido al usuario
-                    Snackbar snackbar = Snackbar.make(layout, "Debes aceptar los tèrminos", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(layout, "Debes aceptar los términos", Snackbar.LENGTH_LONG);
                     snackbar.setAction("Aceptar", new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -292,6 +294,10 @@ public class CrearCuenta extends AppCompatActivity {
 
            //Usamos el método .addOnCompleteListener() para comprobar si se ha realizado con éxito
             .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                /**
+                 * Añadimos la funcionabilidad en caso de que se haya podido crear la cuenta
+                 * @param task Objeto de la clase Task
+                 */
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     //En caso de que el proceso de registro se haya completado de forma correcta
@@ -318,15 +324,15 @@ public class CrearCuenta extends AppCompatActivity {
      */
     public void crearPerfil(String email) {
         //Creamos un Map donde añadimos los campos que queremos crear dentro de la colección perfil
-        Map<String, Object> perfil = new HashMap<>();
-            perfil.put("biografia", "");
-            perfil.put("edad", "");
-            perfil.put("email", email);
-            perfil.put("imagenPerfil", "https://firebasestorage.googleapis.com/v0/b/only-music-b1515.appspot.com/o/imagenes_perfil%2Fperfil_estandar.png?alt=media&token=d786ea2f-e48e-46ee-a3ad-05c0fe5153bf");
-            perfil.put("nombreApellidos", "");
-            perfil.put("nombreUsuario", "");
+        Map<String, Object> map = new HashMap<>();
+            map.put("biografia", "");
+            map.put("edad", "");
+            map.put("email", email);
+            map.put("imagenPerfil", "https://firebasestorage.googleapis.com/v0/b/only-music-b1515.appspot.com/o/imagenes_perfil%2Fperfil_estandar.png?alt=media&token=d786ea2f-e48e-46ee-a3ad-05c0fe5153bf");
+            map.put("nombreApellidos", "");
+            map.put("nombreUsuario", "");
 
         //Usamos el objeto de la clase FireBaseFireStore donde le indicamos el nombre de la colección y la colección que queremos añadir
-        firestore.collection("perfil").add(perfil);
+        firestore.collection("perfil").add(map);
     }
 }

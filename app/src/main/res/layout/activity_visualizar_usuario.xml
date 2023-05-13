@@ -34,7 +34,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:backgroundTint="#1a73e9"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/textoPerfil_visualizarUsuario"
@@ -64,7 +65,8 @@
                 android:layout_height="match_parent"
                 android:inputType="textPersonName"
                 android:enabled="false"
-                android:hint="Nombre y apellidos" />
+                android:hint="Nombre y apellidos"
+                style="@style/TextInputEditText"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -81,7 +83,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Edad"
-                android:enabled="false"/>
+                android:enabled="false"
+                style="@style/TextInputEditText"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -99,7 +102,8 @@
                 android:layout_height="match_parent"
                 android:gravity="start|top"
                 android:enabled="false"
-                android:hint="Biografia" />
+                android:hint="Biografia"
+                style="@style/TextInputEditText"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.divider.MaterialDivider
@@ -125,8 +129,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listadoForo_visualizarUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintTop_toBottomOf="@+id/textoPost_visualizarUsuario"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -35,10 +35,6 @@ public class Artista implements Serializable {
         return apellidos;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
     public String getBiografia() {
         return biografia;
     }
@@ -51,16 +47,8 @@ public class Artista implements Serializable {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(String fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
-    }
-
     public String getGenero_musical() {
         return genero_musical;
-    }
-
-    public void setGenero_musical(String genero_musical) {
-        this.genero_musical = genero_musical;
     }
 
     public String getImagen() {
@@ -75,10 +63,6 @@ public class Artista implements Serializable {
         return nacionalidad;
     }
 
-    public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -89,9 +73,5 @@ public class Artista implements Serializable {
 
     public String getNumero_albums() {
         return numero_albums;
-    }
-
-    public void setNumero_albums(String numero_albums) {
-        this.numero_albums = numero_albums;
     }
 }

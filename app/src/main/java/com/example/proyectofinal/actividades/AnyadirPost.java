@@ -1,19 +1,15 @@
 package com.example.proyectofinal.actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ScrollView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.proyectofinal.R;
-import com.example.proyectofinal.fragmentos.FragmentoCanciones;
-import com.example.proyectofinal.fragmentos.FragmentoForo;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
@@ -101,6 +97,32 @@ public class AnyadirPost extends AppCompatActivity {
             }
         });
         snackbar.show();
+
+        //Añadimos la funcionabilidad al campo del titulo
+        campo_titulo.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Hacemos que cuando el usuario pulse sobre el campo del titulo, que el TextInputLayout añada el icono de limpiar el texto y eliminamos el error
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                layout_titulo.setEndIconMode(TextInputLayout.END_ICON_CLEAR_TEXT);
+                layout_titulo.setError(null);
+            }
+        });
+
+        //Añadimos la funcionabilidad al campo del mensaje
+        campo_mensaje.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Hacemos que cuando el usuario pulse sobre el campo del mensaje, que el TextInputLayout añada el icono de limpiar el texto y eliminamos el error
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                layout_mensaje.setEndIconMode(TextInputLayout.END_ICON_CLEAR_TEXT);
+                layout_mensaje.setError(null);
+            }
+        });
 
         //Declaramos la funcionabilidad del botón confirmar
         boton_continuar.setOnClickListener(new View.OnClickListener() {

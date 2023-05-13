@@ -22,7 +22,8 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_margin="8dp"
-                android:src="@drawable/exit" />
+                android:src="@drawable/exit"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,7 +45,8 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_margin="8dp"
-                android:src="@drawable/log_out"/>
+                android:src="@drawable/log_out"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -67,7 +69,8 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_margin="8dp"
-                android:src="@drawable/close" />
+                android:src="@drawable/close"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:layout_width="wrap_content"

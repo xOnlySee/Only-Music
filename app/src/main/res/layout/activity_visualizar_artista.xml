@@ -90,9 +90,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:enabled="false"
-                    android:textColor="@color/black"
                     android:inputType="textMultiLine"
-                    android:text="Visualizar biografia del artista" />
+                    android:text="Visualizar biografia del artista"
+                    style="@style/TextInputEditText"/>
             </androidx.core.widget.NestedScrollView>
         </com.google.android.material.textfield.TextInputLayout>
         

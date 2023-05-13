@@ -5,16 +5,13 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentResultListener;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
-import android.widget.Toast;
 
 import com.example.proyectofinal.R;
 import com.example.proyectofinal.actividades.VisualizarArtista;
@@ -62,6 +59,7 @@ public class FragmentoArtista extends Fragment implements SearchView.OnQueryText
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //Instanciamos el objeto de la clase View
         view = inflater.inflate(R.layout.fragment_fragmento_artista, container, false);
 
         //Creamos un ArrayList de tipo Artista
@@ -131,6 +129,12 @@ public class FragmentoArtista extends Fragment implements SearchView.OnQueryText
         return view;
     }
 
+    /**
+     * Método donde permite manejar la acción de enviar una consulta de búsqueda
+     * @param query the query text that is to be submitted
+     *
+     * @return Devuelve false
+     */
     @Override
     public boolean onQueryTextSubmit(String query) {
         return false;

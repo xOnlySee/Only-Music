@@ -35,7 +35,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:backgroundTint="#1a73e9"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/textoEditarInformacion_pantallaEditarInformacionUsuario"

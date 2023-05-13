@@ -11,7 +11,6 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.proyectofinal.R;
 import com.example.proyectofinal.actividades.AnyadirPost;
@@ -31,7 +30,7 @@ public class FragmentoForo extends Fragment {
     //Declaramos los elementos necesarios
     FloatingActionButton floatingActionButton_editar, floatingActionButton_anyadir;
     TabLayout tabLayout;
-    ViewPager viewPager;;
+    ViewPager viewPager;
     ViewPageAdapter viewPageAdapter;
     private String email, id_documento;
 
@@ -53,6 +52,7 @@ public class FragmentoForo extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //Instanciamos el objeto de la clase View
         View view = inflater.inflate(R.layout.fragment_fragmento_foro, container, false);
 
         //Identificamos los FloatingActionButton
@@ -64,8 +64,6 @@ public class FragmentoForo extends Fragment {
 
         //Identificamos el ViewPager
         viewPager = view.findViewById(R.id.view_pager);
-
-        //fragmentListener.onFragmentData(email, id_documento);
 
         //Instanciamos el objeto ViewAdapter y le pasamos los parametros necesarios (objeto de la clase fragmento correspondiente, el nombre del Item, el ID del documento y el email
         viewPageAdapter = new ViewPageAdapter(getChildFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);

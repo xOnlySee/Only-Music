@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -202,7 +201,7 @@ public class Reproduccion extends AppCompatActivity {
                         mediaPlayer.prepare();
                         mediaPlayer.start();
 
-                    } catch (Exception e) {}
+                    } catch (Exception ignored) {}
                 }
             }
         });

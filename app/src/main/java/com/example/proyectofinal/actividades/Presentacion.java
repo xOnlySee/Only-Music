@@ -4,11 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
@@ -29,7 +26,6 @@ public class Presentacion extends AppCompatActivity {
     LottieAnimationView animacion;
     Artista artista;
     private String email, id_documento, presentacion, letra_cancion;
-    private boolean reproduccion = false;
 
     /**
      * Método donde añadiremos la funcionabilidad del botón de retroceso

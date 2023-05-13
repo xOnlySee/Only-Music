@@ -2,7 +2,6 @@ package com.example.proyectofinal.actividades;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -11,7 +10,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ScrollView;
 
@@ -129,7 +127,7 @@ public class InicioSesion extends AppCompatActivity implements ActivityCompat.On
         });
 
         //Declaramos la funcionabilidad del campo de la contraseña
-        layout_campo_contrasenya.setOnClickListener(new View.OnClickListener() {
+        campo_contrasenya.setOnClickListener(new View.OnClickListener() {
             /**
              * En caso de que el TextInputLayout sea pulsado, añadiremos el endIconMode correspondiente
              * @param v The view that was clicked.
@@ -138,6 +136,7 @@ public class InicioSesion extends AppCompatActivity implements ActivityCompat.On
             public void onClick(View v) {
                 //Usamos el TextInputLayout seguido del método .setEndIcondeMode para establecer el icono
                 layout_campo_contrasenya.setEndIconMode(TextInputLayout.END_ICON_PASSWORD_TOGGLE);
+                layout_campo_contrasenya.setError(null);
             }
         });
 
