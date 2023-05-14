@@ -14,10 +14,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.signature.ObjectKey;
 import com.example.proyectofinal.R;
 import com.example.proyectofinal.adaptadores.AdaptadorForoVisualizar;
 import com.example.proyectofinal.clases.Foro;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -26,6 +28,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageMetadata;
 
 import java.util.ArrayList;
 
@@ -53,7 +57,6 @@ public class VisualizarUsuario extends AppCompatActivity {
     public void onBackPressed() {
         //Creamos un Intent que vaya a la actividad donde contiene los fragmentos y enviamos el email y el ID del documento
         Intent intent = new Intent(VisualizarUsuario.this, PantallaPrincipal.class);
-        Log.i("ID documento", id_documento);
             intent.putExtra("email", email_inicio_sesion);
             intent.putExtra("ID_documento", id_documento);
         startActivity(intent);
@@ -149,8 +152,27 @@ public class VisualizarUsuario extends AppCompatActivity {
                             foros.add(foro);
                         }
 
-                        //Usamos la implementación Glide donde le indicamos el contexto, la URL de la imagen y donde queremos mostrar la imagen
-                        Glide.with(VisualizarUsuario.this).load(url_imagen).into(imagen);
+                        //Creamos un objeto de la clase Uri donde le pasamos la información del campo "imagenPerfil"
+                        Uri uri = Uri.parse(url_imagen);
+
+                        //Usamos FirebaseStorage donde obtenemos la instancia, el objeto de la clae Uri y los metadatos de la imagen obtenida
+                        FirebaseStorage.getInstance().getReferenceFromUrl(String.valueOf(uri)).getMetadata().addOnSuccessListener(new OnSuccessListener<StorageMetadata>() {
+                            /**
+                             * Método donde realizaremos las acciones en caso de que el proceso se haya realizado de forma exitosa
+                             * @param storageMetadata Objeto de la clase StorageMetadata
+                             */
+                            @Override
+                            public void onSuccess(StorageMetadata storageMetadata) {
+                                //Variable de tipo long donde almacenaremos la fecha de la ultima modificación en milisegundos
+                                long ultima_modificacion = storageMetadata.getUpdatedTimeMillis();
+
+                                //Usamos Glide donde le indicamos la imagen que queremos cargar, la fecha de última modificacion (para indicar que la imágen ha cambiado) y el elemento donde lo queremos mostrar
+                                Glide.with(VisualizarUsuario.this)
+                                        .load(uri)
+                                        .signature(new ObjectKey(ultima_modificacion))
+                                        .into(imagen);
+                            }
+                        });
 
                         //Instanciamos el Adaptador donde le pasamos el ArrayList, el contexto y donde queremos que se muestren
                         adaptadorForoVisualizar = new AdaptadorForoVisualizar(foros, VisualizarUsuario.this, R.layout.listado_foro_visualizar);
